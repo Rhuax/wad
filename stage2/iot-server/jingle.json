@@ -1,0 +1,21 @@
+{
+    "notes": [{
+        "note": 500, 
+        "duration": 200
+    }, {
+        "note": 500, 
+        "duration": 200
+    }, {
+        "note": 500, 
+        "duration": 200
+    }, {
+        "note": 800,
+        "duration": 1500
+    }, {
+        "note": 500,
+        "duration": 500
+    }, {
+        "note": 600, 
+        "duration": 1000
+    }]
+}

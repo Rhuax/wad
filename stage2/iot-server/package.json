@@ -1,0 +1,20 @@
+{
+  "name": "wad-challenge",
+  "private": true,
+  "description": "WAD unibo challenge IoT server",
+  "license": "MIT",
+  "version": "1.0.0",
+  "author": "Marco Moschettini <m.marmos@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marmos91/wad.git"
+  },
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "express": "^4.16.3"
+  }
+}
