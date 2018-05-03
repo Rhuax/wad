@@ -98,7 +98,7 @@ std :: string decrypt(std :: string key, std :: string message)
 
 int main()
 {
-    std :: string message = "http://<fc:c2:de:34:42:7a>:3030/winner/<code>/<your-name>";
+    std :: string message = "http://<fc:c2:de:34:42:7a>:3030/winner";
     std :: string key = "wozniak";
 
     std :: string encrypted = encrypt(key, message);

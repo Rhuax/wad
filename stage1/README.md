@@ -1,12 +1,21 @@
-# WAD challenge
+# Stage 1
+
+The following readme refers to the stage1's assignment. The exercise employs a simple [Caesar's cipher](https://en.wikipedia.org/wiki/Caesar_cipher) to decode the given message. Solutions in the following programming languages are provided in the `solutions` folder:
+
+- javascript
+- python
+- java
+- c++
+
+If you wish to contribute adding your own solutions you are welcome to open a PR 😉
+The decoded message contains the following string: `http://<fc:c2:de:34:42:7a>:3030/winner/<code>/<your-name>`. For more info about it visit [stage 2](https://github.com/marmos91/wad/tree/master/stage2)
 
 **Well done!** If you are here it means you have passed stage 0 of the challenge. *NOTE: If you have landed here before completing stage 0, please go back to [http://wad-challenge.s3-website.eu-central-1.amazonaws.com/](http://wad-challenge.s3-website.eu-central-1.amazonaws.com/). You will need some info contained there*...
 
 ## Introduction
 The goal of the challenge is **decrypt** the following text:
 ```
-&22.UJJ W$!U!MU "#UNOUO MUR|YUN KNKJ5', ,#0JW!- "#YJW7-
-30H,|+# Y
+&22.UJJ W$!U!MU "#UNOUO MUR|YUN KNKJ5', ,#0
 ```
 Decrypting it you will access the final stage of the challenge and light up the IoT device.
 
@@ -41,19 +50,25 @@ Here are the *encryption steps*:
 
 The given encrypted message was generated following the above steps. Now it is your time to write the **decryption algorithm** to reverse the process!
 
+## And then?
+
+The decoded message will contain an URL. You will have to perform an HTTP request to the URL with the following informations:
+
+- **A code**: this will be the **encryption key itself encrypted with the algorithm above** (so you have to also implement the encryption part to succeed).
+- **Your name**: it will be displayed on the LCD of the challenge's device.
+
+```java
+String code = encrypt(key, key);
+```
+
 ## Something missing?
 
 Do you still need the encryption/decryption key? Have you deeply inspected the first stage's code? 🤓
 
 ## Bad news: that was not all...
 
-To complete the challenge you will need a **code** to send to the IoT device. That code will be the **encryption key itself encrypted with the algorithm above**. So you have to also implement the encryption part to succeed.
+Also review the **arp protocol**. Do some research on the network on how to obtain an IP address from a physical Mac Address. Trust me, you will find it useful 😉
 
-```java
-String code = encrypt(key, key);
-```
-
-Also review the **arp protocol**. Trust me, you will find it useful 😉
 ### Questions?
 
 Feel free to ask any question, but do not expect always an answer 😉

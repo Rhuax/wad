@@ -24,7 +24,6 @@ def decrypt(key, message):
         output_chunk = ''
         for char in chunk:
             output_char = (alphabet.index(char) - shift) % len(alphabet)
-            print output_char
             if output_char < 0:
                 output_char = len(alphabet) + output_char
             output_chunk = output_chunk + alphabet[output_char]
@@ -32,7 +31,7 @@ def decrypt(key, message):
     return output.strip()
 
 if __name__ == '__main__':
-    message = 'http://<fc:c2:de:34:42:7a>:3030/winner/<code>/<your-name>'
+    message = 'http://<fc:c2:de:34:42:7a>:3030/winner'
     key = 'wozniak'
 
     print('Encrypted secret is')

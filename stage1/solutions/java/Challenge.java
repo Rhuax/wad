@@ -83,7 +83,7 @@ public class Challenge
         for(int i = 0; i < 93; i++)
             alphabet[i] = (char) (i + 33);
     
-		String message = "http://<fc:c2:de:34:42:7a>:3030/winner/<code>/<your-name>";
+		String message = "http://<fc:c2:de:34:42:7a>:3030/winner";
         String key = "wozniak";
 
         String encrypted = Challenge.encrypt(key, message);

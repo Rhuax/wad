@@ -69,7 +69,7 @@ function decrypt(key, message)
     return output.trim();
 }
 
-const message = 'http://<fc:c2:de:34:42:7a>:3030/winner/<code>/<your-name>';
+const message = 'http://<fc:c2:de:34:42:7a>:3030/winner';
 const key = 'wozniak';
 
 console.log('Encrypted secret is');

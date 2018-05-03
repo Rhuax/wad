@@ -71,17 +71,17 @@ module.exports = class Server
             response.sendStatus(200);
         });
 
-        this._server.get('/winner/:code/:name', (request, response) =>
+        this._server.get('/winner', (request, response) =>
         {
             console.info('New get winner request received', request.params);
 
             return response.status(200).send('Try to POST me instead (not on facebook :P)! need a hint? Try visiting https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol').end();
         });
 
-        this._server.post('/winner/:code/:name', (request, response) =>
+        this._server.post('/winner', (request, response) =>
         {
             console.info('New winner request received', request.params);
-            if(request.params && request.params.name && request.params.code && request.params.code === this._code)
+            if(request.body && request.body.name && request.body.code && request.body.code === this._code)
             {
                 this._lcd.clear();
                 this._led.on();
@@ -90,7 +90,7 @@ module.exports = class Server
                 this._lcd.setColor(0, 0, 255);
                 this._lcd.write('The winner is');
                 this._lcd.setCursor(1, 2);
-                this._lcd.write(request.params.name);
+                this._lcd.write(request.body.name);
                 this._play_jingle();
                 response.sendStatus(200);
             }
