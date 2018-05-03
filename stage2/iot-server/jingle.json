@@ -1,21 +1,21 @@
 {
     "notes": [{
         "note": 500, 
-        "duration": 200
+        "duration": 50000
     }, {
         "note": 500, 
-        "duration": 200
+        "duration": 50000
     }, {
         "note": 500, 
-        "duration": 200
+        "duration": 50000
     }, {
         "note": 800,
-        "duration": 1500
+        "duration": 200000
     }, {
         "note": 500,
-        "duration": 500
+        "duration": 100000
     }, {
         "note": 600, 
-        "duration": 1000
+        "duration": 200000
     }]
 }

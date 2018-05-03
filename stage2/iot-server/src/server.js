@@ -1,7 +1,10 @@
+'use strict';
+
 const express = require('express');
 const lcd = require('jsupm_i2clcd');
 const buzzer = require('jsupm_buzzer');
 const grove = require('jsupm_grove');
+const body_parser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 
@@ -30,6 +33,7 @@ module.exports = class Server
     {
         console.log(this._buzzer.name(), 'connected');
         console.log(this._lcd.name(), 'connected');
+        this._server.use(body_parser.urlencoded({extended: true}));
         fs.readFile(path.resolve(__dirname, '..', 'jingle.json'), (error, data) =>
         {
             if(error)
@@ -60,6 +64,7 @@ module.exports = class Server
         this._lcd.write('Waiting for');
         this._lcd.setCursor(1, 2);
         this._lcd.write('winner...');
+        console.info('Server reset');
     }
 
     _setup_routes()
@@ -73,14 +78,14 @@ module.exports = class Server
 
         this._server.get('/winner', (request, response) =>
         {
-            console.info('New get winner request received', request.params);
+            console.info('New get winner request received', request.body);
 
             return response.status(200).send('Try to POST me instead (not on facebook :P)! need a hint? Try visiting https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol').end();
         });
 
         this._server.post('/winner', (request, response) =>
         {
-            console.info('New winner request received', request.params);
+            console.info('New winner request received', request.body);
             if(request.body && request.body.name && request.body.code && request.body.code === this._code)
             {
                 this._lcd.clear();
@@ -97,6 +102,8 @@ module.exports = class Server
             else
                 response.sendStatus(403);
         });
+
+        console.info('Setup completed');
     }
 
     _play_jingle()

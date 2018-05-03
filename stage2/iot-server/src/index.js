@@ -1,3 +1,5 @@
+'use strict';
+
 const Server = require('./server');
 
 let server = new Server('5-8,\'|)');
