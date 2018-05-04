@@ -6,6 +6,7 @@ The following readme refers to the stage1's assignment. The exercise employs a s
 - python
 - java
 - c++
+- JSFuck 💩
 
 If you wish to contribute adding your own solutions you are welcome to open a PR 😉
 The decoded message contains the following string: `http://<fc:c2:de:34:42:7a>:3030/winner/<code>/<your-name>`. For more info about it visit [stage 2](https://github.com/marmos91/wad/tree/master/stage2)
